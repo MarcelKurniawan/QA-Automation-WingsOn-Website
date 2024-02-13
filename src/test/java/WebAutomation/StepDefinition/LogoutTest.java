@@ -22,7 +22,7 @@ public class LogoutTest extends BaseTest{
 
     @And("user is able to see Alert popup : Apakah anda yakin ingin logout?")
     public void userAbleToSeeAlertPopup() {
-        homePage.alertMessages();
+        homePage.alertLogout();
     }
     @And("user click ok on the Alert popup")
     public void userClickOk() {

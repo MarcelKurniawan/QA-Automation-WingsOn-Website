@@ -9,13 +9,24 @@ import WebAutomation.AutomationBase.BaseTest;
 import org.testng.Assert;
 import org.openqa.selenium.Alert;
 
+import java.util.concurrent.TimeUnit;
+
 public class HomePage extends BaseTest{
-    By bannerHome = By.cssSelector(".container");
+    public static void waitFor(int seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+    By bannerHome = By.cssSelector("div.w-full");
     By loginButton = By.cssSelector("a.pl-4");
-    By accountButton = By.id("headlessui-menu-button-:r0:");
-    By profileButton = By.id("headlessui-menu-item-:r2:");
-    By changePassButton = By.id("headlessui-menu-item-:r3:");
-    By logoutButton = By.cssSelector("span.block");
+    By accountButton = By.xpath("/html/body/div/div/div[1]/nav/div/div");
+    By profileButton = By.id("headlessui-menu-item-:r5:");
+    By changePassButton = By.id("headlessui-menu-item-:ri:");
+    By logoutButton = By.cssSelector("span.cursor-pointer");
+    By alertLogout = By.cssSelector("div.position");
+    By acceptLogout = By.xpath("/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div/div/button");
 
     public void isBannerDisplayed() {
         wait.until(ExpectedConditions.presenceOfElementLocated(bannerHome));
@@ -27,30 +38,30 @@ public class HomePage extends BaseTest{
 
     public void clickAccountButton() {
         driver.findElement(accountButton).click();
+        waitFor(2);
     }
 
     public void clickProfileButton() {
         driver.findElement(profileButton).click();
     }
-
-    public void clickLogoutButton() {
-        driver.findElement(logoutButton).click();
-    }
     public void clickChangePassButton() {
         driver.findElement(changePassButton).click();
     }
-    public void isLoginDisplayed() {
+
+    public void clickLogoutButton() {
+        driver.findElement(logoutButton).click();
+        waitFor(2);
+    }
+   public void isLoginDisplayed() {
         wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
     }
 
-    public void alertMessages() {
-        String alertMessage = driver.switchTo().alert().getText();
-        Assert.assertTrue(alertMessage == alertMessage);
+    public void alertLogout() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(alertLogout));
     }
 
     public void acceptLogout() {
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+        driver.findElement(acceptLogout).click();
     }
 
 }

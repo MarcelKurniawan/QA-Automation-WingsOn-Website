@@ -16,7 +16,7 @@ public class LoginPage extends BaseTest{
     By passwordField = By.id("password");
 
     By loginButton = By.cssSelector("button.flex");
-    By errorMessage = By.cssSelector("div.absolute");
+    By errorMessage = By.id("headlessui-portal-root");
 
 
     public void enterEmail(String emails) {
