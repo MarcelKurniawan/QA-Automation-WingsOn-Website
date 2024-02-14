@@ -24,7 +24,7 @@ public class LogoutTest extends BaseTest{
     public void userAbleToSeeAlertPopup() {
         homePage.alertLogout();
     }
-    @And("user click ok on the Alert popup")
+    @And("user click Ya on the Alert popup")
     public void userClickOk() {
         homePage.acceptLogout();
     }

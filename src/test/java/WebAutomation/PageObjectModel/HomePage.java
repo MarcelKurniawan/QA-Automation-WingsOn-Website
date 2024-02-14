@@ -23,10 +23,10 @@ public class HomePage extends BaseTest{
     By loginButton = By.cssSelector("a.pl-4");
     By accountButton = By.xpath("/html/body/div/div/div[1]/nav/div/div");
     By profileButton = By.id("headlessui-menu-item-:r5:");
-    By changePassButton = By.id("headlessui-menu-item-:ri:");
+    By changePassButton = By.id("headlessui-menu-item-:r6:");
     By logoutButton = By.cssSelector("span.cursor-pointer");
-    By alertLogout = By.cssSelector("div.position");
-    By acceptLogout = By.xpath("/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div/div/button");
+    By alertLogout = By.cssSelector("div.px-6");
+    By acceptLogout = By.id("navLogoutYa");
 
     public void isBannerDisplayed() {
         wait.until(ExpectedConditions.presenceOfElementLocated(bannerHome));

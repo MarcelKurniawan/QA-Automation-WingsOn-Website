@@ -11,6 +11,6 @@ Feature: Change Password
     Then user is on homepage
     When user click accounts button
     And user click change password button
-    And user fill password form with "asdfasdf", "12341234", "12341234"
+    And user fill password form with "asdfasdf", "asdfasdf", "asdfasdf"
     And user click send button
     Then user password should be updated

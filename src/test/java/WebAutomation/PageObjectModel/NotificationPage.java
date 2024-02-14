@@ -9,7 +9,7 @@ import org.testng.Assert;
 public class NotificationPage extends BaseTest {
 
         By notificationButton = By.id("notifikasi");
-        By statusNotification = By.cssSelector("section.font-semibold");
+        By statusNotification = By.cssSelector("p.text-lg");
 
         public void clickNotification() {
             driver.findElement(notificationButton).click();

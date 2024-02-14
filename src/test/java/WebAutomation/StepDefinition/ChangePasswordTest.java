@@ -14,7 +14,7 @@ public class ChangePasswordTest {
     HomePage homePage = new HomePage();
     ProfilePage profilePage = new ProfilePage();
 
-    @When("user click the accounts button")
+    @When("user click accounts button")
     public void userClickAccountsButton() {
         homePage.clickAccountButton();
     }
