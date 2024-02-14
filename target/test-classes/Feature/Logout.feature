@@ -12,5 +12,5 @@ Feature: Logout
     And user click the account button
     When user click the logout button
     And user is able to see Alert popup : Apakah anda yakin ingin logout?
-    And user click ok on the Alert popup
+    And user click Ya on the Alert popup
     Then user able to see login button
